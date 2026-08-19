@@ -2,15 +2,19 @@
 Contributors: adamsilverstein
 Tags: heic, heif, media, image, upload
 Requires at least: 6.4
-Tested up to: 6.8
+Tested up to: 7.1
 Stable tag: 1.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Enables HEIC/HEIF image upload support in WordPress with client-side conversion to JPEG.
+No longer supported. This plugin is retired and will not receive further updates.
 
 == Description ==
+
+**This plugin is no longer supported and will not receive further updates.**
+
+The repository has been archived. Anyone still running this plugin can safely deactivate and delete it.
 
 iPhones capture photos in HEIC format by default, but WordPress does not natively support HEIC uploads. This plugin adds seamless HEIC/HEIF upload support by converting images to JPEG directly in the browser before uploading.
 
@@ -65,6 +69,7 @@ The plugin includes COEP/COOP header support for Firefox and Safari, which is re
 == Changelog ==
 
 = 1.0.0 =
+* Final release. This plugin is no longer supported.
 * Initial release.
 * HEIC/HEIF to JPEG client-side conversion.
 * Cross-origin isolation via COEP/COOP headers.

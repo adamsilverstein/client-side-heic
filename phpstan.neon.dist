@@ -1,0 +1,9 @@
+parameters:
+    level: 4
+    paths:
+        - client-side-heic.php
+        - includes/
+    scanDirectories:
+        - vendor/php-stubs/wordpress-stubs/
+    bootstrapFiles:
+        - tests/bootstrap-phpstan.php

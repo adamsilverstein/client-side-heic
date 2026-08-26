@@ -1,0 +1,33 @@
+{
+	"name": "adamsilverstein/client-side-heic",
+	"description": "Enables HEIC/HEIF image upload support in WordPress with client-side conversion to JPEG.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"wp-coding-standards/wpcs": "^3.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"phpunit/phpunit": "^9.6",
+		"phpstan/phpstan": "^1.10",
+		"php-stubs/wordpress-stubs": "^6.4",
+		"yoast/phpunit-polyfills": "^2.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf",
+		"phpstan": "phpstan analyse --memory-limit=512M",
+		"test": "phpunit",
+		"lint": [
+			"@phpcs",
+			"@phpstan"
+		]
+	}
+}

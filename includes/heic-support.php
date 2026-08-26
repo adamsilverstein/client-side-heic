@@ -45,6 +45,13 @@ add_filter( 'upload_mimes', 'csh_add_heic_mime_types' );
  * WordPress may not recognize HEIC/HEIF files by their extension.
  * This filter ensures proper type detection.
  *
+ * Security note: This function validates by file extension only, without
+ * inspecting file contents (magic bytes). This is acceptable because the
+ * client-side JavaScript converts HEIC files to JPEG before upload, so the
+ * server should normally only receive JPEG data. The HEIC/HEIF MIME types
+ * are registered as a fallback to prevent upload rejection if conversion
+ * is bypassed or the file metadata still references the original format.
+ *
  * @param array  $data     File data array containing ext, type, and proper_filename.
  * @param string $file     Full path to the file.
  * @param string $filename The file name.
@@ -52,16 +59,7 @@ add_filter( 'upload_mimes', 'csh_add_heic_mime_types' );
  * @param string $real_mime Real MIME type of the file.
  * @return array Modified file data.
  */
-/*
- * Security note: This function validates by file extension only, without
- * inspecting file contents (magic bytes). This is acceptable because the
- * client-side JavaScript converts HEIC files to JPEG before upload, so the
- * server should normally only receive JPEG data. The HEIC/HEIF MIME types
- * are registered as a fallback to prevent upload rejection if conversion
- * is bypassed or the file metadata still references the original format.
- */
-// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
-function csh_heic_check_filetype( $data, $file, $filename, $mimes, $real_mime ) {
+function csh_heic_check_filetype( $data, $file, $filename, $mimes, $real_mime ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 	if ( ! csh_is_heic_enabled() ) {
 		return $data;
 	}

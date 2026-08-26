@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: phpcs
+        name: PHP CodeSniffer
+        entry: vendor/bin/phpcs
+        language: system
+        files: \.php$
+        exclude: ^(vendor/|tests/)
+
+      - id: phpstan
+        name: PHPStan
+        entry: vendor/bin/phpstan analyse --memory-limit=512M --no-progress
+        language: system
+        files: \.php$
+        pass_filenames: false
+
+      - id: phpunit
+        name: PHPUnit
+        entry: vendor/bin/phpunit
+        language: system
+        files: \.php$
+        pass_filenames: false
